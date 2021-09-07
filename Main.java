@@ -11,10 +11,14 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		int codigo, quantidade;
-		double subtotal = 0;
+		double totalG = 0;
 		double total= 0;
+		int add = 1;
+		
 		System.out.println("Bem vindo a nossa lanchonete!\n ");
-		System.out.println("CODIGO     ITEM        PRE�O\n01   Cachorro Quente   R$ 4,00\n02     X-SALADA        R$ 4,50\n03     X-BACON         R$ 5,00\n04     TORRADA         R$ 2,00\n05     REFRIGERANTE    R$ 1,50\n"
+		
+		while(add != 2) {
+		System.out.println("CODIGO     ITEM        PREÇO\n01   Cachorro Quente   R$ 4,00\n02     X-SALADA        R$ 4,50\n03     X-BACON         R$ 5,00\n04     TORRADA         R$ 2,00\n05     REFRIGERANTE    R$ 1,50\n"
 				);
         System.out.println("Digite o numero do item desejado:\n");
 		codigo = sc.nextInt();
@@ -36,11 +40,12 @@ public class Main {
 		else if (codigo == 5) {
 			total = quantidade * 1.50;
 		}
-		
+		totalG = total + totalG;
 		System.out.printf("Total R$ %.2f%n",total);
-		
-		   
-		
+		System.out.println("Deseja adicionar mais itens?Sim - 1 Não - 2");
+		add = sc.nextInt();		
+		} 
+		System.out.printf("Total= R$" + totalG);
 		sc.close();
 	}
 
